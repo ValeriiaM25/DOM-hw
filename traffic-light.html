@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .content {
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .traffic-light {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width:150px;
+            height: 400px;
+            background-color: black;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin:auto;
+        }
+
+        #btn {
+            height: 50px;
+            width: 100px;
+            background-color: rgb(24, 248, 173);
+            color:rgb(23, 35, 36);
+            color: white;
+            font-weight: bold;
+            outline: none;
+            border: none;
+        }
+
+        #btn:hover{
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+    <div class="traffic-light">
+        <div id ="redlight" class="circle" style="background:#ff0000;"></div>
+        <div id = "yellowlight" class="circle" style="background: #111111"></div>
+        <div id = "greenlight" class="circle"style="background: #111111;"></div>
+        </div>
+        <button id="btn">Click Here!</button>
+    </div>
+
+      
+     <script>
+       var redlight = document.getElementById('redlight');
+       var yellowlight = document.getElementById('yellowlight');
+       var greenlight = document.getElementById('greenlight');
+       var colors = ["rgb(255, 0, 0)",'rgb(17, 17, 17)','rgb(255, 255, 0)','rgb(0, 128, 0)'];
+       
+       document.querySelector('#btn').onclick = function turnOn() {
+           if  (redlight.style.backgroundColor == colors[0]) {
+               redlight.style.backgroundColor = colors[1]; 
+               yellowlight.style.backgroundColor = colors[2]; 
+            }
+            else if (yellowlight.style.backgroundColor == colors[2]) {
+                yellowlight.style.backgroundColor = colors[1]; 
+                greenlight.style.backgroundColor = colors[3]; 
+            }
+         else if (greenlight.style.backgroundColor == colors[3]) {
+                greenlight.style.backgroundColor = colors[1]; 
+                redlight.style.backgroundColor = colors[0]; 
+            }
+        }
+      </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content"></div>
+    <script>
+var playList = [
+{
+ author: "LED ZEPPELIN",
+ song:"STAIRWAY TO HEAVEN"
+},
+
+{
+ author: "QUEEN",
+ song:"BOHEMIAN RHAPSODY"
+},
+
+{
+ author: "LYNYRD SKYNYRD",
+ song:"FREE BIRD"
+},
+
+{
+ author: "DEEP PURPLE",
+ song:"SMOKE ON THE WATER"
+},
+
+{
+ author: "JIMI HENDRIX",
+ song:"ALL ALONG THE WATCHTOWER"
+},
+
+{
+ author: "AC/DC",
+ song:"BACK IN BLACK"
+},
+
+{
+ author: "QUEEN",
+ song:"WE WILL ROCK YOU"
+},
+
+{
+ author: "METALLICA",
+ song:"ENTER SANDMAN"
+}];
+
+let content = document.getElementById('content');
+let newUl = document.createElement('ul');
+content.append(newUl);
+
+for (let i in playList) {
+    let listItems = document.createElement('li');
+    let listContent = document.createElement('p');
+    listContent.append(`${playList[i].author} : ${playList[i].song}`);
+    listItems.append(listContent);
+    newUl.append(listItems);
+}
+    </script>
+</body>
+</html>
